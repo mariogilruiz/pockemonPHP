@@ -42,9 +42,9 @@ class PokemonController extends AbstractController
         $pokemon->setImagen('https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png');
         $pokemon->setCodigo(23456);
         $pokemon2 = new Pokemons();
-        $pokemon2->setNombre('toggepi');
+        $pokemon2->setNombre('togepi');
         $pokemon2->setDescripcion('psíquico');
-        $pokemon2->setImagen('https://assets.pokemon.com/assets/cms2/img/pokedex/full/028.png');
+        $pokemon2->setImagen('https://assets.pokemon.com/assets/cms2/img/pokedex/full/175.png');
         $pokemon2->setCodigo(23457);
         $pokemon3 = new Pokemons();
         $pokemon3->setNombre('squirtle');
