@@ -2,6 +2,9 @@
 
 {% block contenido %}
 <h2>Listado de Pokemons </h2>
+{% for mensaje in app.flashes('Éxito') %}
+<p>{{mensaje}}</p>
+{% endfor %}
 <div class="row row-cols-1 row-cols-md-2">
     {% for pokemon in pokemons %}
     <div class="col mb-4">
@@ -11,6 +14,8 @@
                 <h5 class="card-title">{{pokemon.nombre}}</h5>
                 <p class="card-text">{{pokemon.descripcion}}</p>
                 <a href="{{path('showPokemon',{'id':pokemon.id})}}" class="btn btn-primary">Más Info</a>
+                <a href="{{path('editPokemon',{'id':pokemon.id})}}" class="btn btn-primary">Editar</a>
+                <a href="{{path('deletePokemon',{'id':pokemon.id})}}" class="btn btn-danger">Borrar</a>
             </div>
         </div>
     </div>
