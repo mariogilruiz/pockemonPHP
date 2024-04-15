@@ -29,7 +29,7 @@ class PokemonType extends AbstractType
                 'class' => Debilidad::class,
                 'choice_label' => 'nombre',
                 'multiple' => true,
-                'expanded' => true
+                'autocomplete' => true
             ])
             ->add('enviar', SubmitType::class);
     }
