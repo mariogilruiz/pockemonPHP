@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Debilidad;
 use App\Entity\Pokemons;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping\Entity;
@@ -51,6 +52,18 @@ class PokemonController extends AbstractController
         $pokemon3->setDescripcion('agua');
         $pokemon3->setImagen('https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png');
         $pokemon3->setCodigo(23458);
+        $debilidades = new Debilidad();
+        $debilidades->setNombre('Veneno');
+        $debilidades2 = new Debilidad();
+        $debilidades2->setNombre('Fuego');
+        $debilidades3 = new Debilidad();
+        $debilidades3->setNombre('Agua');
+        $pokemon->addDebilidade($debilidades3);
+        $pokemon2->addDebilidade($debilidades);
+        $pokemon2->addDebilidade($debilidades2);
+        $doctrine->persist($debilidades);
+        $doctrine->persist($debilidades2);
+        $doctrine->persist($debilidades3);
         $doctrine->persist($pokemon);
         $doctrine->persist($pokemon2);
         $doctrine->persist($pokemon3);
