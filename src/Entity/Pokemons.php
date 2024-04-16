@@ -34,6 +34,9 @@ class Pokemons
     #[ORM\ManyToMany(targetEntity: Debilidad::class, inversedBy: 'pokemons')]
     private Collection $debilidades;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $tipo = null;
+
     public function __construct()
     {
         $this->debilidades = new ArrayCollection();
@@ -112,6 +115,18 @@ class Pokemons
     public function removeDebilidade(Debilidad $debilidade): static
     {
         $this->debilidades->removeElement($debilidade);
+
+        return $this;
+    }
+
+    public function getTipo(): ?string
+    {
+        return $this->tipo;
+    }
+
+    public function setTipo(?string $tipo): static
+    {
+        $this->tipo = $tipo;
 
         return $this;
     }
